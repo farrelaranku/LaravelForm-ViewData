@@ -18,17 +18,17 @@ $data = array(
     function add(Request $request){
 
         $request->validate([
-            'id'=>'required',
             'name'=>'required',
-            'nrp'=>'required',
+            'nrp'=>'required|gt:0',
             'email'=>'required|email|unique:crud'
         ]);
 
         $query = DB::table('crud')->insert([
-            'id'=>$request->input('id'),
             'name'=>$request->input('name'),
             'nrp'=>$request->input('nrp'),
-            'email'=>$request->input('email')
+            'email'=>$request->input('email'),
+            'created_at'=>now(),
+            'updated_at'=>now()
         ]);
 
         if($query){

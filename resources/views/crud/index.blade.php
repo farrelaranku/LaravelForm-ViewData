@@ -36,11 +36,6 @@
                 <form action="add" method="POST" >
                 @csrf
 
-                <div class="form-group">
-                    <label for="">ID</label>
-                    <input type="text" class="form-control" name="id" placeholder="Enter Your ID" value="{{old('id')}}">
-                    <span style="color:red">@error('id'){{ $message }} @enderror</span>
-                </div>
                 
                     <div class="form-group">
                         <label for="">Name</label>
@@ -50,7 +45,7 @@
 
                     <div class="form-group">
                         <label for="">NRP</label>
-                        <input type="text" class="form-control" name="nrp" placeholder="Enter Your NRP" value="{{ old('nrp') }}">
+                        <input type="int" class="form-control" name="nrp" placeholder="Enter Your NRP" value="{{ old('nrp') }}">
                         <span style="color:red">@error('nrp'){{ $message }} @enderror</span>
                     </div>
 

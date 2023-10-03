@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('crud', function (Blueprint $table) {
-            $table->id();
-            $table->string('id');
+            $table->increments('id');
             $table->string('name');
-            $table->string('nrp');
+            $table->integer('nrp');
             $table->string('email');
-            $table->timestamps();
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 
